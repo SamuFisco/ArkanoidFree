@@ -28,6 +28,8 @@ public class ControlUI : MonoBehaviour
 
     [SerializeField] private AudioMixer audioMixer;
 
+    [SerializeField] GameObject[] bloques;
+
     private Vector2 posicionInicialMenuLateral = new Vector2(-1.999817f, -670);
     private Vector2 posicionFinalMenuLateral = new Vector2(-1.999817f, -7);
     private Vector2 posicionInicialOpciones = new Vector2(-1.999817f, -1466);
@@ -86,7 +88,10 @@ public class ControlUI : MonoBehaviour
 
         tiempoActual = 0f;
         juegoIniciado = false;
-
+        for (int i = 0; i < bloques.Length; i++)
+        {
+            bloques[i].gameObject.SetActive(true);
+        }
         ControlSingleton.Instance.reiniciarCronometro();
         ControlSingleton.Instance.reinciarPuntos();
         MovimientoJugador.Instance.ResetBola();

@@ -79,7 +79,7 @@ public class BolaControl : MonoBehaviour
                     ControlSingleton.Instance.SumarPuntos(bloque.puntaje);
                 }
 
-                Destroy(otro.gameObject);
+                otro.gameObject.SetActive(false);
             }
         }
     }
